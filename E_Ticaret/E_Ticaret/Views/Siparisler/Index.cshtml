@@ -1,0 +1,75 @@
+﻿
+
+@model List<E_Ticaret.Models.Siparisler>
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<link href="~/css/confirmcss.css" rel="stylesheet" />
+<script src="~/js/confirm.min.js"></script>
+<center><h1>SİPARİŞLER</h1></center>
+<br />
+<br />
+
+<table class="table caption-top">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">kullanıcı id</th>
+            <th scope="col">Ürün id</th>
+            <th scope="col">Ürün Fiyatı</th>
+            <th scope="col">Ürün Miktarı</th>
+            <th scope="col">Sipariş Tarihi</th>
+
+
+        </tr>
+
+    </thead>
+    <tbody>
+
+
+        @foreach (var sprs in Model)
+        {
+            <tr>
+                <th>@sprs.Sprs_id</th>
+                <th>@sprs.Kul_id</th>
+                <th>@sprs.Urun_id</th>
+                <th>@sprs.Sprs_Miktar</th>
+                <th>@sprs.Sprs_Fiyat</th>
+                <th>@sprs.SDate</th>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+<br />
+<br />
+
+@*<script>
+    $(".sepetekle").click(function () {
+        var p1 = {};
+        p1.spt_fiyat = parseFloat($(this).attr("fiy")) || 0.0;
+        p1.Miktar = 1;
+        p1.UrunId = parseInt($(this).attr("urun_id")) || 0;
+
+        $.ajax({
+            url: '/Siparis/Index',
+            dataType: 'json',
+            type: 'POST',
+            cache: false,
+            data: JSON.stringify({
+                p1: p1
+            }),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                window.location.href = "";
+            },
+
+        }).done(function () {
+
+        });
+    })
+
+</script>*@

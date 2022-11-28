@@ -1,0 +1,37 @@
+﻿@using E_Ticaret.Models
+@model List<Kullanicilar>
+
+@{
+    ViewBag.Title = "KayitlarList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<center><h1>KULLANICI LİSTESİ</h1></center><br /><br />
+
+<table class="table table-bordered" >
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>AD</th>
+            <th>SOYAD</th>
+            <th>MAİL</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kayit in Model )   
+        {
+        <tr>
+            <td>@kayit.Kul_id</td>
+            <td>@kayit.Kul_Ad</td>
+            <td>@kayit.Kul_Soyad</td>
+            <td>@kayit.Kul_Mail</td>
+            <td><a class="btn btn-danger" href="/Kullanici/KayitSil?id=@kayit.Kul_id">SİL</a></td>
+            <td><a class="btn btn-success" href="/Kullanici/KayitGuncelle?id=@kayit.Kul_id" >GÜNCELLE</a></td>
+        </tr>
+
+        }
+    </tbody>
+</table>

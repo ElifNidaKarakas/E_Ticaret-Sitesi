@@ -1,0 +1,56 @@
+﻿@model List<E_Ticaret.Models.Urunler>
+
+
+@foreach (var urun in Model)
+ {
+
+<div class="row-sm-9">
+    <div class="col-sm-3">
+        <div class="card">
+            <div class="card-body">
+                <center><img src="~/resimler/@urun.urun_Resim" class="card-img-top" alt="..." style="width:150px; height:225px;"></center>
+                <CENTER>
+                    <h5 class="card-title"><b><i>@urun.Urun_Ad</i></b></h5>
+                    @*<p class="card-text">256GB </p><p>BEYAZ</p>*@
+                    <footer style="background-color:#ef4d4d; width:30%;"><b>@urun.Urun_Fiyat TL<br /></b></footer>
+                </CENTER>
+                <center><a href="#" class="bg-light  btn-primary-rounded"><br /><br />ÜRÜNÜ İNCELE</a></center>
+                <center><a  class="bg-light  btn-primary-rounded sepetekle" mik="1" fiy="@urun.Urun_Fiyat" urun_id="@urun.Urun_id"> SEPETE EKLE</a><br /><br /><br /><br /></center>
+            </div>
+        </div>
+    </div>  
+</div>
+
+ }
+
+<script>
+    $(".sepetekle").click(function () {
+        var p1 = {};
+        p1.spt_fiyat = parseFloat($(this).attr("fiy"))||0.0;
+        p1.Miktar = 1;
+        p1.UrunId = parseInt($(this).attr("urun_id"))||0;
+
+        $.ajax({
+            url: '/Sepet/SepetEkle',
+            dataType: 'json',
+            type: 'POST',
+            cache: false,
+            data: JSON.stringify({
+                p1: p1
+            }),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                window.location.href = "";
+            },
+
+        }).done(function () {
+
+        });
+    })
+  
+</script>
+
+
+
+
+

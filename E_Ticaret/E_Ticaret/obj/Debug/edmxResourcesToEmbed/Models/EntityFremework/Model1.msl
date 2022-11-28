@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities1">
+    <EntitySetMapping Name="Kategori">
+      <EntityTypeMapping TypeName="Model.Kategori">
+        <MappingFragment StoreEntitySet="Kategori">
+          <ScalarProperty Name="Ktgr_id" ColumnName="Ktgr_id" />
+          <ScalarProperty Name="Ktgr_Ad" ColumnName="Ktgr_Ad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanicilar">
+      <EntityTypeMapping TypeName="Model.Kullanicilar">
+        <MappingFragment StoreEntitySet="Kullanicilar">
+          <ScalarProperty Name="Kul_id" ColumnName="Kul_id" />
+          <ScalarProperty Name="Kul_Ad" ColumnName="Kul_Ad" />
+          <ScalarProperty Name="Kul_Soyad" ColumnName="Kul_Soyad" />
+          <ScalarProperty Name="Kul_Sifre" ColumnName="Kul_Sifre" />
+          <ScalarProperty Name="Kul_Mail" ColumnName="Kul_Mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sepet">
+      <EntityTypeMapping TypeName="Model.Sepet">
+        <MappingFragment StoreEntitySet="Sepet">
+          <ScalarProperty Name="Spt_id" ColumnName="Spt_id" />
+          <ScalarProperty Name="Kullanici_id" ColumnName="Kullanici_id" />
+          <ScalarProperty Name="spt_fiyat" ColumnName="spt_fiyat" />
+          <ScalarProperty Name="Miktar" ColumnName="Miktar" />
+          <ScalarProperty Name="UrunId" ColumnName="UrunId" />
+          <ScalarProperty Name="SDate" ColumnName="SDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Siparisler">
+      <EntityTypeMapping TypeName="Model.Siparisler">
+        <MappingFragment StoreEntitySet="Siparisler">
+          <ScalarProperty Name="Sprs_id" ColumnName="Sprs_id" />
+          <ScalarProperty Name="Sprs_Miktar" ColumnName="Sprs_Miktar" />
+          <ScalarProperty Name="Sprs_Fiyat" ColumnName="Sprs_Fiyat" />
+          <ScalarProperty Name="Kul_id" ColumnName="Kul_id" />
+          <ScalarProperty Name="Urun_id" ColumnName="Urun_id" />
+          <ScalarProperty Name="SDate" ColumnName="SDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Urunler">
+      <EntityTypeMapping TypeName="Model.Urunler">
+        <MappingFragment StoreEntitySet="Urunler">
+          <ScalarProperty Name="Urun_id" ColumnName="Urun_id" />
+          <ScalarProperty Name="Urun_Ad" ColumnName="Urun_Ad" />
+          <ScalarProperty Name="Urun_Fiyat" ColumnName="Urun_Fiyat" />
+          <ScalarProperty Name="Urun_Kod" ColumnName="Urun_Kod" />
+          <ScalarProperty Name="urun_Resim" ColumnName="urun_Resim" />
+          <ScalarProperty Name="Katgr_id" ColumnName="Katgr_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,22 @@
+﻿body {
+   
+    background-image:url("../resimler/a.jpg");
+    
+     height: 1000%;
+    width: 100%;
+}
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+

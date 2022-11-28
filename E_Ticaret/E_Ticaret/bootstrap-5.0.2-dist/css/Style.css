@@ -1,0 +1,9 @@
+﻿body {
+}
+
+.jumbotron {
+    background-image: url("../resimler/arkaplan.jpg");
+    background-size: cover;
+    height: 100%;
+}
+

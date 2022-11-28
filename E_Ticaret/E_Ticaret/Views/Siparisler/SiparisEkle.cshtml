@@ -1,0 +1,40 @@
+﻿@using E_Ticaret.Models
+@model List<E_Ticaret.Models.Siparisler>
+
+@{
+    Layout = null;
+}
+
+<table class="table caption-top">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">kullanıcı id</th>
+            <th scope="col">Ürün id</th>
+            <th scope="col">Ürün Miktarı</th>
+            <th scope="col">Toplam Tutar</th>
+            <th scope="col">Sipariş Tarihi</th>
+
+
+        </tr>
+
+    </thead>
+    <tbody>
+
+
+        @foreach (var sprs in Model)
+        {
+            <tr>
+                <th>@sprs.Sprs_id</th>
+                <th>@sprs.Kul_id</th>
+                <th>@sprs.Urun_id</th>
+                <th>@sprs.Sprs_Miktar</th>
+                <th>@sprs.Sprs_Fiyat</th>
+                <th>@sprs.SDate</th>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+

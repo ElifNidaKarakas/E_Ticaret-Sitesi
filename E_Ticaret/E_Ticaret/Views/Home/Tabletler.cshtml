@@ -1,0 +1,168 @@
+﻿
+@model List<E_Ticaret.Models.Urunler>
+
+@foreach (var tablet in Model)
+{
+    <div class="row-sm-9">
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-body">
+                    <center><img src="~/resimler/@tablet.urun_Resim" class="card-img-top" alt="..." style="width:150px; height:225px;"></center>
+                    <CENTER>
+                        <h5 class="card-title"><b><i>@tablet.Urun_Ad</i></b></h5>
+                        @*<p class="card-text">256GB </p><p>BEYAZ</p>*@
+                        <footer style="background-color:#ef4d4d; width:30%;"><b>@tablet.Urun_Fiyat TL</b></footer>
+                    </CENTER>
+                    <center><a href="#" class="bg-light  btn-primary-rounded"><br />ÜRÜNÜ İNCELE<br /><br /></a></center>
+                    <center><a class="bg-light  btn-primary-rounded sepetekle" mik="1" fiy="@tablet.Urun_Fiyat" urun_id="@tablet.Urun_id"> SEPETE EKLE</a><br /><br /><br /><br /></center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+<script>
+    $(".sepetekle").click(function () {
+        var p1 = {};
+        p1.spt_fiyat = parseFloat($(this).attr("fiy"))||0.0;
+        p1.Miktar = 1;
+        p1.UrunId = parseInt($(this).attr("urun_id"))||0;
+
+        $.ajax({
+            url: '/Sepet/SepetEkle',
+            dataType: 'json',
+            type: 'POST',
+            cache: false,
+            data: JSON.stringify({
+                p1: p1
+            }),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                window.location.href = "";
+            },
+
+        }).done(function () {
+
+        });
+    })
+
+</script>
+
+
+@*<div class="col-sm-3">
+            <div class="card">
+                <div class="card-body">
+                    <center>
+                        <img src="~/resimler/tablet2.jpg" class="card-img-top" alt="..." style="width:150px; height:225px;">
+                    </center>
+                    <CENTER>
+                        <h5 class="card-title"><b><i>iPHONE SE</i></b></h5>
+                        <p class="card-text">256GB </p><p>RED</p>
+                        <footer style="background-color:#ef4d4d; width:25%;"><b>7.999 TL</b></footer>
+                    </CENTER>
+                    <center><a href="https://localhost:44363/Home/UrunAyrinti" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-body">
+                    <center>
+                        <img src="~/resimler/tablet3.jpg" class="card-img-top" alt="..." style="width:150px; height:225px;">
+                    </center>
+                    <CENTER>
+                        <h5 class="card-title"><b><i>SAMSUNG GALAXY S21 PLUS 5G</i></b></h5>
+                        <p class="card-text">128GB </p><p>SİYAH</p>
+                        <footer style="background-color:#ef4d4d; width:25%;"><b>12.999 TL</b></footer>
+                    </CENTER>
+                    <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card">
+            <div class="card-body">
+                <center><img src="~/resimler/tablet4.jpg" class="card-img-top" alt="..." style="width:150px; height:225px;"></center>
+                <CENTER>
+                    <h5 class="card-title"><b><i>VESTEL VENUS E5</i></b></h5>
+                    <p class="card-text">64GB </p><p>GECE MAVİSİ</p>
+                    <footer style="background-color:#ef4d4d; width:25%;"><b>5.999 TL</b></footer>
+                </CENTER>
+                <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                <p></p><p></p><p></p>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="row-sm-9">
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-body">
+                    <center><img src="~/resimler/tablet5.jpeg" class="card-img-top" alt="..." style="width:150px; height:225px;"></center>
+                    <CENTER>
+                        <h5 class="card-title"><b><i>SAMSUNG GALAXY NOTE10 PLUS</i></b></h5>
+                        <p class="card-text">256GB </p><p>BEYAZ</p>
+                        <footer style="background-color:#ef4d4d; width:25%;"><b>12.999 TL</b></footer>
+                    </CENTER>
+                    <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-body">
+                    <center>
+                        <img src="~/resimler/tablet9.jpg" class="card-img-top" alt="..." style="width:150px; height:225px;">
+                    </center>
+                    <CENTER>
+                        <h5 class="card-title"><b><i>iPHONE SE</i></b></h5>
+                        <p class="card-text">256GB </p><p>RED</p>
+                        <footer style="background-color:#ef4d4d; width:25%;"><b>7.999 TL</b></footer>
+                    </CENTER>
+                    <center><a href="https://localhost:44363/Home/UrunAyrinti" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-body">
+                    <center>
+                        <img src="~/resimler/tablet8.jpg" class="card-img-top" alt="..." style="width:150px; height:225px;">
+                    </center>
+                    <CENTER>
+                        <h5 class="card-title"><b><i>SAMSUNG GALAXY S21 PLUS 5G</i></b></h5>
+                        <p class="card-text">128GB </p><p>SİYAH</p>
+                        <footer style="background-color:#ef4d4d; width:25%;"><b>12.999 TL</b></footer>
+                    </CENTER>
+                    <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card">
+            <div class="card-body">
+                <center><img src="~/resimler/tablet7.jpg" class="card-img-top" alt="..." style="width:150px; height:225px;"></center>
+                <CENTER>
+                    <h5 class="card-title"><b><i>VESTEL VENUS E5</i></b></h5>
+                    <p class="card-text">64GB </p><p>GECE MAVİSİ</p>
+                    <footer style="background-color:#ef4d4d; width:25%;"><b>5.999 TL</b></footer>
+                </CENTER>
+                <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                <p></p><p></p><p></p>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />*@
+    
+}

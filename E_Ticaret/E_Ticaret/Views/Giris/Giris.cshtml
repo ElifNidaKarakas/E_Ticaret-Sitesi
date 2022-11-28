@@ -1,0 +1,65 @@
+﻿@model E_Ticaret.Models.Kullanicilar
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="@*~/Content/Site.css*@" />
+    <title>Giris</title>
+</head>
+
+<body style="text-align: center; color: #275a7c; background-color: #F5FFFA;">
+    <table>
+
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold" style="color:#ea4055"><b>ELEKTRONİK SATIŞ</b></h1>
+                <p class="col-md-8 fs-4">HOŞGELDİNİZ KEYİFLİ ALIŞVERİŞLER DİLERİZ</p>
+                <br /><br /><br /><br />
+            </div>
+        </div>
+        
+    </table>
+    @ViewBag.Mesaj
+    @using(Html.BeginForm("Giris","Giris",FormMethod.Post))
+    {
+
+        <div class="col-md-12">
+            <br />
+           
+            <label for="email" class="form-label">e-mail:</label>
+            @Html.TextBoxFor(m=>m.Kul_Mail, new {@class="form-control",placeholder="E-mail",autofocus="autofocus" })
+        </div>
+        <div class="col-md-12">
+            <br />
+            <div class="col-md-12">
+                <br />
+                <label for="password" class="form-label">ŞİFRE</label>
+                @Html.PasswordFor(m => m.Kul_Sifre, new { @class = "form-control", placeholder = "PASSWORD" })
+
+            </div>
+        </div>
+        <br />
+      
+        <div class="col-md-12">
+            <br /><br />
+            <a href="https://localhost:44363/">
+                <button type="submit" class="btn btn-primary " style="background-color: #bbddde; width: 170px;height:25px;"><b>GİRİŞ</b></button>
+            </a>
+        </div>
+        <div class="col-md-12">
+            <br /><br />
+            <label for="uye" class="form-label">ÜYE DEĞİL MİSİN?</label>
+           <a href="https://localhost:44363/Home/KullaniciKayit">ÜYE OL</a>
+        </div>
+        }
+    
+ 
+
+
+</body>
+</html>

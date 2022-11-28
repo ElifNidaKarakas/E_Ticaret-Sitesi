@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FormDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Kategori">
+    <Key>
+      <PropertyRef Name="Ktgr_id" />
+    </Key>
+    <Property Name="Ktgr_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ktgr_Ad" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Kullanicilar">
+    <Key>
+      <PropertyRef Name="Kul_id" />
+    </Key>
+    <Property Name="Kul_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kul_Ad" Type="varchar" MaxLength="50" />
+    <Property Name="Kul_Soyad" Type="varchar" MaxLength="50" />
+    <Property Name="Kul_Sifre" Type="varchar" MaxLength="50" />
+    <Property Name="Kul_Mail" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sepet">
+    <Key>
+      <PropertyRef Name="Spt_id" />
+    </Key>
+    <Property Name="Spt_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kullanici_id" Type="int" />
+    <Property Name="spt_fiyat" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Miktar" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="UrunId" Type="int" />
+    <Property Name="SDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Siparisler">
+    <Key>
+      <PropertyRef Name="Sprs_id" />
+    </Key>
+    <Property Name="Sprs_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sprs_Miktar" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Sprs_Fiyat" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Kul_id" Type="int" />
+    <Property Name="Urun_id" Type="int" />
+    <Property Name="SDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Urunler">
+    <Key>
+      <PropertyRef Name="Urun_id" />
+    </Key>
+    <Property Name="Urun_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Urun_Ad" Type="varchar" MaxLength="50" />
+    <Property Name="Urun_Fiyat" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Urun_Kod" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="urun_Resim" Type="text" />
+    <Property Name="Katgr_id" Type="int" />
+  </EntityType>
+  <EntityContainer Name="FormDBStoreContainer">
+    <EntitySet Name="Kategori" EntityType="Self.Kategori" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sepet" EntityType="Self.Sepet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Siparisler" EntityType="Self.Siparisler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Urunler" EntityType="Self.Urunler" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

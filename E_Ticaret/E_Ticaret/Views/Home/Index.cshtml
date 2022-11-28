@@ -1,0 +1,295 @@
+﻿@using E_Ticaret.Controllers;
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    .carousel-inner > .item > img,
+    .carousel-inner > .item > a > img {
+        height: 100%;
+        margin: auto;
+    }
+
+    .container {
+        width: 80% !important;
+    }
+</style>
+
+<div class="container  mt-0">
+
+    <br>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:350px;">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner d-inline" role="listbox">
+
+            <div class="item active  d-inline">
+                <img src="~/resimler/slider3.png" alt="Chania" style="width:830px ; height:350px">
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="~/resimler/slider1.jpg" alt="Chania" style="width:830px ; height:350px">
+                <div class="carousel-caption">
+
+
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="~/resimler/slider2.jpg" alt="Flower" style="width:830px ; height:350px">
+                <div class="carousel-caption">
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<div class="row">
+   
+    <p><Center><h3>FAVORİ ÜRÜNLER </h3> </Center></p>
+    <div class="col-sm-4 MB-5">
+        <div class="card">
+            <div class="card-body">
+                <center><img src="~/resimler/tablet1.jpg" class="card-img-top" alt="..." style="width:150px; height:225px;"></center>
+                <CENTER>
+                    <h5 class="card-title"><b><i>SAMSUNG GALAXY TAB S6 LİTE  </i></b></h5>
+                    <p class="card-text">10.4"&nbsp;&nbsp;32GB </p><p>SİYAH</p>
+
+                    <footer style="background-color:#ef4d4d; width:25%;"><b>999 TL</b></footer>
+                </CENTER>
+                <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 mb-5">
+        <div class="card">
+            <div class="card-body">
+                <center>
+                    <img src="~/resimler/tlf1.jpg" class="card-img-top" alt="..." style="width:150px; height:225px;">
+                </center>
+                <CENTER>
+                    <h5 class="card-title"><b><i>iPHONE SE</i></b></h5>
+                    <p class="card-text">256GB </p><p>RED</p>
+
+                    <footer style="background-color:#ef4d4d; width:25%;"><b>7.999 TL</b>
+                    </footer>
+                </CENTER>
+                <center><a href="https://localhost:44363/Home/UrunAyrinti" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 mb-5">
+        <div class="card">
+            <div class="card-body">
+                <center><img src="~/resimler/tlf4.jpg" class="card-img-top" alt="..." style="width:150px; height:225px;"></center>
+                <CENTER>
+                    <h5 class="card-title"><b><i> VESTEL VENUS E5</i></b></h5>
+                    <p class="card-text">64GB </p><p>GECE MAVİSİ</p>
+                    <footer style="background-color:#ef4d4d; width:25%;"><b>5.999 TL</b></footer>
+                </CENTER>
+                <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+            </div>
+        </div>
+    </div>
+    <p></p><p></p>
+    <br /><br /><br />  <br /><br /><br />
+
+    <div class="row ">
+        <div class="col-sm-4 mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <center><img src="~/resimler/pc4.jpg" class="card-img-top" alt="..." style="width:150px; height:225px;"></center>
+                    <CENTER>
+                        <h5 class="card-title"><b><i>HP REBAK REYZAN</i></b></h5>
+                        <p class="card-text">4300u /8GB RAM/ 512GB SSD </p><p>SİYAH</p>
+
+                        <footer style="background-color:#ef4d4d; width:25%;"><b>4.399 TL</b></footer>
+                    </CENTER>  <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <center><img src="~/resimler/tablet2.jpg" class="card-img-top" alt="..." style="width:170px; height:225px;"></center>
+                    <CENTER>
+                        <h5 class="card-title"><b><i> APPLE iPAD 2020</i></b></h5>
+                        <p class="card-text">8.NESİL /32GB/10.2"</p><p>PİNK</p>
+
+                        <footer style="background-color:#ef4d4d; width:25%;"><b>3.324,99 TL</b></footer>
+                    </CENTER> <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <center><img src="~/resimler/pc3.jpg" class="card-img-top" alt="..." style="width:150px; height:225px;"></center>
+                    <CENTER>
+                        <h5 class="card-title"><b><i>LENOVO Thinkbook Amd Ryzen</i></b></h5>
+                        <p class="card-text">45000u/256GB SSD/8 GB RAM </p><p>GRİ</p>
+
+                        <footer style="background-color:#ef4d4d; width:25%;"><b>7.999 TL</b></footer>
+                    </CENTER> <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                </div>
+            </div>
+        </div>
+        <br /><br /><br /><br /><br /><br />
+
+        <div class="row">
+            <div class="col-sm-4 mb-5">
+                <div class="card">
+                    <div class="card-body">
+                        <center><img src="~/resimler/tlf4.jpg" class="card-img-top" alt="..." style="width:150px; height:225px;"></center>
+                        <CENTER>
+                            <h5 class="card-title"><b><i>iPHONE SE</i></b></h5>
+                            <p class="card-text">256GB </p><p>RED</p>
+
+                            <footer style="background-color:#ef4d4d; width:25%;"><b>7.999 TL</b></footer>
+                        </CENTER> <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 mb-5">
+                <div class="card">
+                    <div class="card-body">
+
+                        <center>
+                            <img src="~/resimler/pc7.jpg" class="card-img-top" alt="..." style="width:150px; height:225px;">
+                        </center>
+                        <CENTER>
+                            <h5 class="card-title"><b><i>ASUS X540ua-gq1394</i></b></h5>
+                            <p class="card-text">45000u/128GB SSD/4 GB RAM </p><p>SİYAH</p>
+
+                            <footer style="background-color:#ef4d4d; width:25%;"><b>7.999 TL</b></footer>
+                        </CENTER> <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 mb-5">
+                <div class="card">
+                    <div class="card-body">
+                        <center><img src="~/resimler/tablet3.jpg" class="card-img-top" alt="..." style="width:170px; height:225px;"></center>
+                        <CENTER>
+                            <h5 class="card-title"><b><i> HUAWEİ MATEPAD T10</i></b></h5>
+                            <p class="card-text">32GB/9.7"</p><p>SİYAH</p>
+
+                            <footer style="background-color:#ef4d4d; width:25%;"><b>7.999 TL</b></footer>
+                        </CENTER> <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 mb-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <center><img src="~/resimler/tlf7.jpg" class="card-img-top" alt="..." style="width:150px; height:225px;"></center>
+                            <CENTER>
+                                <h5 class="card-title"><b><i>iPHONE SE</i></b></h5>
+                                <p class="card-text">256GB </p><p>RED</p>
+
+                                <footer style="background-color:#ef4d4d; width:25%;"><b>7.999 TL</b></footer>
+                            </CENTER>  <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 mb-5">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <center>
+                                <img src="~/resimler/tlf12.jpg" class="card-img-top" alt="..." style="width:150px; height:225px;">
+                            </center>
+                            <CENTER>
+                                <h5 class="card-title"><b><i>iPHONE SE</i></b></h5>
+                                <p class="card-text">256GB </p><p>RED</p>
+
+                                <footer style="background-color:#ef4d4d; width:25%;"><b>7.999 TL</b></footer>
+                            </CENTER>  <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 mb-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <center><img src="~/resimler/tablet4.jpg" class="card-img-top" alt="..." style="width:170px; height:225px;"></center>
+                            <CENTER>
+                                <h5 class="card-title"><b><i>LENOVO TAB M10 TB-X306F</i></b></h5>
+                                <p class="card-text">32GB/10.4" </p><p>SİYAH</p>
+
+                                <footer style="background-color:#ef4d4d; width:25%;"><b>7.999 TL</b></footer>
+                            </CENTER> <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 mb-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <center><img src="~/resimler/tlf13.jpg" class="card-img-top" alt="..." style="width:150px; height:225px;"></center>
+                                <CENTER>
+                                    <h5 class="card-title"><b><i>iPHONE SE</i></b></h5>
+                                    <p class="card-text">256GB </p><p>RED</p>
+
+                                    <footer style="background-color:#ef4d4d; width:25%;"><b>7.999 TL</b></footer>
+                                </CENTER> <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-5">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <center>
+                                    <img src="~/resimler/pc6.jpg" class="card-img-top" alt="..." style="width:150px; height:225px;">
+                                </center>
+                                <CENTER>
+                                    <h5 class="card-title"><b><i>EXCALIBUR V15</i></b></h5>
+                                    <p class="card-text">3200e/256GB SSD/8 GB RAM</p><p>GRİ</p>
+
+                                    <footer style="background-color:#ef4d4d; width:25%;"><b>7.999 TL</b></footer>
+                                </CENTER> <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <center><img src="~/resimler/tablet5.jpeg" class="card-img-top" alt="..." style="width:170px; height:225px;"></center>
+                                <CENTER>
+                                    <h5 class="card-title"><b><i>SAMSUNG GALAXY TAB A7</i></b></h5>
+                                    <p class="card-text">32GB/10.4" </p><p>SİYAH</p>
+
+                                    <footer style="background-color:#ef4d4d; width:25%;"><b>7.999 TL</b></footer>
+                                </CENTER> <center><a href="#" class="bg-light  btn-primary-rounded">ÜRÜNÜ İNCELE</a></center>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>           

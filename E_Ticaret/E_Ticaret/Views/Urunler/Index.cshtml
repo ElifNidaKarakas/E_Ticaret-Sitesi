@@ -1,0 +1,80 @@
+﻿                     @*yönetici ürün ekleme sayfası*@
+
+@{
+    ViewBag.Title = "Ürün Ekleme";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<h2>ÜRÜN EKLEME</h2>
+<br />
+<br />
+<form class="row g-3" action="/Urunler/UrunEkle" method="post">
+    <div class="col-md-12">
+        <label for="name" class="form-label">ÜRÜN AD</label>
+        <input type="text" class="form-control" id="name" name="Urun_Ad" placeholder="">
+    </div>
+    <div class="col-md-12">
+        <br />
+        <label for="fiyat" class="form-label">ÜRÜN FİYAT</label>
+        <input type="text" class="form-control" id="surname" name="Urun_Fiyat" placeholder="">
+    </div>
+    <div class="col-md-12">
+        <br />
+        <label for="kod" class="form-label">ÜRÜN KOD</label>
+        <input type="text" class="form-control" id="" name="Urun_Kod" placeholder="">
+    </div>
+    <div class="col-md-12">
+        <br />
+        <label for="file" class="form-label">ÜRÜN RESİM</label>
+        <input type="file" class="form-control" id="" name="urun_Resim" placeholder="">
+    </div>
+    <br />
+    <div class="col-md-12">
+        <br />
+        <label for="label" class="form-label">KATEGORİ</label>
+
+
+        <select class="form-control buttom" id="Katgr_id" name="Katgr_id">
+        </select>
+    </div>
+    <div class="col-md-12">
+        <br /><br />
+
+        <button type="submit" class="btn btn-primary "><b>KAYDET</b></button>
+        <br />
+        <span><strong>@ViewBag.Mesaj</strong> </span>
+
+    </div>
+
+</form>
+
+
+<script>
+
+    $(document).ready(function () {
+        Select_Bind("Katgr_id", "Kategoriler", "Urunler")
+    })
+
+    function Select_Bind(ddl_ID, actionname, controllername) {
+        $('#' + ddl_ID + '').empty();
+        $.ajax({
+            url: '/' + controllername + '/' + actionname + '',
+            dataType: 'json',
+            type: 'POST',
+            cache: false,
+            data: JSON.stringify({
+
+            }),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+
+                var event_data = '';
+                for (var i = 0; i < data.length; i++) {
+                    event_data += '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+                }
+                $('#' + ddl_ID + '').append(event_data);
+            },
+
+        });
+    }
+</script>

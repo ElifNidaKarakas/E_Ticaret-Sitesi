@@ -1,0 +1,93 @@
+﻿@*@{
+
+    }
+
+       <!DOCTYPE html>
+
+       <html>
+       <head>
+           <meta name="viewport" content="width=device-width" />
+           <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+           <title>UrunAyrinti</title>
+       </head>
+       <body>
+           <div class="container pb-5">
+               <div class="row">
+                   <div class=" col-md-6">
+                       <img src="~/resimler/tlf1.jpg" class="img-responsive" />
+
+                   </div>
+                   <div class=" col-md-6">
+                       <center><h1><b><i> iPHONE SE</i></b></h1></center>
+                       <div class="row">
+                           <div class=" col-md-12">
+                               <div id="description">
+                                   <p>Retina HD ekran</p>
+                                   <p>PS teknolojisine sahip 4.7 inç (diyagonal) geniş ekran LCD Multi-Touch</p>
+                                   <p>326 ppi yoğunlukta 1334 x 750 piksel çözünürlük</p>
+                                   <p>1400:1 kontrast oranı (tipik)</p>
+                                   <p>True Tone ekran</p>
+                                   <p>Geniş renk yelpazesine sahip ekran (P3)</p>
+                                   <p>Haptic Touch</p>
+                                   <p>625 nit maksimum parlaklık (tipik)</p>
+                                   <p>Parmak izine dayanıklı, yağ tutmayan kaplama</p>
+                                   <p>Ekran Yakınlaştırma</p>
+                                   <p>Ulaşılabilirlik</p>
+                                   <p>64 GB Dahili Hafıza</p>
+                                   <p>İşlemci Türü: A13</p>
+                                   <p>&nbsp;</p>
+                                   <p><h5><b>KAMERA ÖZELLİKLERİ</b></h5></p>
+                                   <p>Ön Kamera:7MP</p>
+                                   <p>Arka Kamera:12MP</p>
+                               </div>
+
+                           </div>
+                       </div>
+                       <div class="row">
+                           <div class="col-md-12">
+                               <h2><b>7.999 TL</b></h2>
+                           </div>
+                           <div class="col-md-12">
+                               <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                   <button type="button" class="btn btn-primary">SEPETE EKLE
+
+
+                                   </button>
+
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+           </div>
+
+           </div>
+       </body>
+       </html>*@
+
+
+@model List<E_Ticaret.Models.Urunler>
+
+
+@foreach (var urun in Model)
+{
+
+    <div class="row-sm-9">
+        <div class="col-sm-9">
+            <div class="card">
+                <div class="card-body">
+                    <center><img src="~/resimler/@urun.urun_Resim" class="card-img-top" alt="..." style="width:150px; height:225px;"></center>
+                    <CENTER>
+                        <h5 class="card-title"><b><i>@urun.Urun_Ad</i></b></h5>
+                        @*<p class="card-text">256GB </p><p>BEYAZ</p>*@
+                        <footer style="background-color:#ef4d4d; width:30%;"><b>@urun.Urun_Fiyat TL<br /></b></footer>
+                    </CENTER>
+                    <center><a href="#" class="bg-light  btn-primary-rounded"><br /><br />ÜRÜNÜ İNCELE</a><br /><br /><br /><br /></center>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+}

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Kategori">
+    <Key>
+      <PropertyRef Name="Ktgr_id" />
+    </Key>
+    <Property Name="Ktgr_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ktgr_Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Kullanicilar">
+    <Key>
+      <PropertyRef Name="Kul_id" />
+    </Key>
+    <Property Name="Kul_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kul_Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Kul_Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Kul_Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Kul_Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Sepet">
+    <Key>
+      <PropertyRef Name="Spt_id" />
+    </Key>
+    <Property Name="Spt_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kullanici_id" Type="Int32" />
+    <Property Name="spt_fiyat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Miktar" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="UrunId" Type="Int32" />
+    <Property Name="SDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Siparisler">
+    <Key>
+      <PropertyRef Name="Sprs_id" />
+    </Key>
+    <Property Name="Sprs_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sprs_Miktar" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Sprs_Fiyat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Kul_id" Type="Int32" />
+    <Property Name="Urun_id" Type="Int32" />
+    <Property Name="SDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Urunler">
+    <Key>
+      <PropertyRef Name="Urun_id" />
+    </Key>
+    <Property Name="Urun_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Urun_Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Urun_Fiyat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Urun_Kod" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="urun_Resim" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Katgr_id" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Kategori" EntityType="Self.Kategori" />
+    <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" />
+    <EntitySet Name="Sepet" EntityType="Self.Sepet" />
+    <EntitySet Name="Siparisler" EntityType="Self.Siparisler" />
+    <EntitySet Name="Urunler" EntityType="Self.Urunler" />
+  </EntityContainer>
+</Schema>

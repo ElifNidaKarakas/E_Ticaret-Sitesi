@@ -1,0 +1,41 @@
+﻿@using E_Ticaret.Models
+@model IEnumerable<Siparisler>
+
+@{
+    ViewBag.Title = "KayitlarList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+<br /><br /><br />
+<table class="table caption-top">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">KULLANICI ID</th>
+            <th scope="col">ÜRÜN ID</th>
+            <th scope="col">ÜRÜN MİKTARI </th>
+            <th scope="col">TOPLAM TUTAR</th>
+            <th scope="col">SİPARİŞ TARİHİ </th>
+
+
+        </tr>
+
+    </thead>
+    <tbody>
+
+
+        @foreach (var sprs in Model)
+        {
+            <tr>
+                <th>@sprs.Sprs_id</th>
+                <th>@sprs.Kul_id</th>
+                <th>@sprs.Urun_id</th>
+                <th>@sprs.Sprs_Miktar</th>
+                <th>@sprs.Sprs_Fiyat</th>
+                <th>@sprs.SDate</th>
+
+            </tr>
+        }
+
+    </tbody>
+</table>

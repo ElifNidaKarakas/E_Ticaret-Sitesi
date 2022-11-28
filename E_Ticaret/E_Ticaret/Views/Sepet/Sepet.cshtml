@@ -1,0 +1,182 @@
+﻿
+@model List<E_Ticaret.Models.Sepet>
+@{
+    ViewBag.Title = "Index";
+
+}
+<link href="~/css/confirmcss.css" rel="stylesheet" />
+<script src="~/js/confirm.min.js"></script>
+
+<center><h1>SEPETİM</h1></center>
+<br />
+<br />
+
+<table class="table caption-top">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">kullanıcı id</th>
+            <th scope="col">Ürün id</th>
+            <th scope="col">Ürün Fiyatı</th>
+            <th scope="col">Ürün Miktarı</th>
+            <th scope="col">Sipariş Tarihi</th>
+            <th scope="col">Toplam Tutar</th>
+            <th scope="col"> SiL</th>
+
+
+        </tr>
+
+    </thead>
+    <tbody>
+
+
+        @foreach (var sepet in Model)
+        {
+            <tr>
+                <th>@sepet.Spt_id</th>
+                <th>@sepet.Kullanici_id</th>
+                <th>@sepet.UrunId</th>
+                @*@sepet.Urunler.Urun_Ad  diyagramı olusturup böyle yap*@
+                <th>@sepet.spt_fiyat</th>
+                <th>
+                    <div>
+                        @Html.ActionLink("-", "Azalt", new { id = sepet.UrunId }, new { @class = "btn btn-secondary azalt" })
+                    </div>
+
+                    @Html.TextBoxFor(x => sepet.Miktar, new { @class = "txt", data_id = sepet.Spt_id })
+                    <div>
+                        @Html.ActionLink("+", "Arttir", new { id = sepet.UrunId }, new { @class = "btn btn-info arttir" })
+
+                    </div>
+                </th>
+                <th>@sepet.SDate</th>
+                <th>@sepet.ToplamTutar</th>
+                <th><a class="btn btn-danger sil" idsi="@sepet.Spt_id">SİL</a></th>
+            </tr>
+        }
+
+    </tbody>
+</table>
+<br />
+<br />
+
+<div class="row">
+    <div class="col-md-10">
+        <div class="container">
+            <h4><b>@ViewBag.Tutar</b></h4>
+        </div>
+    </div>
+    <div class="col-md-2">
+
+        <button class="btn btn-success" data-toggle="modal" data-target="#modal1">Siparişi Tamamla</button>
+        <div class="modal fade" id="modal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Şiparişiniz Alındı</h5>
+                        <button class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Bizi tercih ettiğiniz için teşekkür ederiz.
+                    </div>
+
+
+
+                    <div class="modal-footer">
+                        <button class="btn btn-success">
+                            <a href="https://localhost:44363/">Alışverişe Devam Et</a>
+                        </button>
+                        <button class="btn btn-danger"><a href="https://localhost:44363/Giris/Giris">ÇIKIŞ</a></button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $('.sil').confirm({
+        title: 'Uyarı!',
+        content: 'Kaydı Silmek İstediğinizden Emin misiniz?',
+        buttons: {
+            Evet: function () {
+                var idsi = this.$target.attr("idsi");
+                debugger;
+                $.ajax({
+                    url: '/Sepet/SepetSil',
+                    dataType: 'json',
+                    type: 'POST',
+                    cache: false,
+                    data: JSON.stringify({
+                        id: parseInt(idsi) || 0
+                    }),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        window.location.href = "/Sepet/Index";
+                    },
+
+                }).done(function () {
+
+                });
+
+            },
+            Hayır: function () {
+                $.alert('İşlem İptal Edildi!');
+            },
+
+        }
+
+    })
+
+
+</script>
+<style>
+    .txt {
+        line-height: 17px;
+        width: 50px !important;
+        height: 32px;
+        font-size: 14px;
+        text-align: center;
+        border: solid 1px #ccc;
+        margin-left: 23px;
+    }
+
+    .arttir {
+        display: block;
+        cursor: pointer;
+        border: solid 1px #ccc;
+        position: absolute;
+        margin-top: -32px;
+        margin-left: 72px;
+    }
+
+    .azalt {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+    }
+</style>
+
+
+
+
+
+@*<script>
+        //$(function () {
+        //    $('.txt').on('change', function(){
+        //        var miktar = $(this).val();
+        //        var sepetid = $(this).attr('data_id');
+        //        $.ajax({
+        //            url: '/Sepet/DinamikMiktar/',
+        //            data: { id: sepetid, miktari: miktar },
+        //            success: function (res) {
+        //                document.location.reload();
+        //            }
+        //        })
+        //    }
+        //});
+    </script>*@

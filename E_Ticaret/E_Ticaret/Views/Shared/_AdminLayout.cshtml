@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title E-Ticaret </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontawesome-free@5.15.3/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand" style="background:#bbddde;height=58px;">
+        <a class="navbar-brand" href="#">
+            <div class="text-center">
+                <img src="~/resimler/sepetLogo.jpg" width="50" valign="middle" alt="">
+            </div>
+        </a>
+        <div class="container mb-0">
+            <div class="navbar-header">
+                <a class="navbar-brand py-2" href="https://localhost:44363/">ANA SAYFA</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active py-2 d-none d-md-inline-block"><a href="https://localhost:44363/Home/Hakkimizda">HAKKIMIZDA</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle " data-toggle="dropdown" href="#">
+                        ÜRÜNLER
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://localhost:44363/Home/Telefonlar">TELEFONLAR</a></li>
+                        <li><a href="https://localhost:44363/Home/Tabletler">TABLETLER</a></li>
+                        <li><a href="https://localhost:44363/Home/Bilgisayarlar">LAPTOPLAR</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://localhost:44363/Kullanici/KayitlarList">KULLANICILAR</a></li>
+                <li><a href="https://localhost:44363/Sepet/Siparisler">SİPARİŞLER</a></li>
+                <li><a href="https://localhost:44363/Giris/Admin">ÇIKIŞ</a></li>
+
+            </ul>
+
+
+        </div>
+    </nav>
+
+
+
+
+    <div class="container body-content" style="width:100% ">
+        @RenderBody()
+
+    </div>
+    <footer class="bd-footer bg-light" style="background-color:#ffffff; width:100% ">
+        <center>
+            <div class="container py-5">
+                <div class="row">
+                    <br /><br /><br /><br /><br />
+
+                    <div class="col-6 col-lg-3 offset-lg-3 mb-3">
+                        <h5>LİNKLER</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="https://localhost:44363/">ANASAYFA</a></li>
+                            <li class="mb-2"><a href="https://localhost:44363/Home/Hakkimizda">HAKKIMIZDA</a></li>
+                            <li class="mb-2"><a href="https://localhost:44363/">ÜRÜNLER</a></li>
+                            <li class="mb-2"><a href="https://localhost:44363/Sepet">SEPET</a></li>
+                            <li class="mb-2"><a href="https://localhost:44363/Home/KullaniciKayit">ÜYE KAYIT</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-3 mb-3">
+                        <h5>KATEGORİLER</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="https://localhost:44363/Home/Telefonlar">TELEFONLAR</a></li>
+                            <li class="mb-2"><a href="https://localhost:44363/Home/Tabletler">TABLETLER</a></li>
+                            <li class="mb-2"><a href="https://localhost:44363/Home/Bilgisayarlar">BİLGİSAYARLAR</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-3 mb-3">
+                        <h5>HAKKIMIZDA</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="https://github.com/twbs/bootstrap">İLETİŞİM</a></li>
+                            <li class="mb-2"><a href="https://github.com/twbs/bootstrap/tree/v4-dev">MARKALARIMIZ </a></li>
+                            <li class="mb-2"><a href="https://github.com/twbs/icons">GİZLİLİK POLİTİKAMIZ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-3 mb-3">
+                        <h5>MÜŞTERİ HİZMETLERİ</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="https://github.com/twbs/bootstrap/issues">ÖDEME SEÇENEKLERİ</a></li>
+                            <li class="mb-2"><a href="https://localhost:44363/Home/KullaniciKayit">ÜYE KAYIT</a></li>
+                            <li class="mb-2"><a href="https://github.com/sponsors/twbs">İPTAL ve İADE </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </center>
+    </footer>
+
+</body>
+</html>

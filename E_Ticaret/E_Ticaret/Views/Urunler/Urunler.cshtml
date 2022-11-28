@@ -1,0 +1,50 @@
+﻿@using E_Ticaret.Models
+@model List<Urunler>
+
+@{
+    ViewBag.Title = "KayitlarList";
+
+}
+
+<center><h1>ÜRÜNLER LİSTESİ</h1></center>
+<br />
+<br />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <tH>KATEGORİ ID</tH>
+            <th>AD</th>
+            <th>FİYAT</th>
+            <th>KOD</th>
+            <th>RESİM</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+            
+        </tr>
+       
+  </thead>
+    <tbody>
+        @foreach (var urun in Model)
+        {
+        <tr>
+            <td>@urun.Urun_id</td>
+            <td>@urun.Katgr_id</td>
+            <td>@urun.Urun_Ad</td>
+            <td>@urun.Urun_Fiyat</td>
+            <td>@urun.Urun_Kod</td>
+            <td>@urun.urun_Resim</td>
+
+            @if (User.IsInRole("A"))
+            {
+                <td><a class="btn btn-danger" href="/Urunler/UrunSil?id=@urun.Urun_id">SİL</a></td>
+                <td><a class="btn btn-success" href="/Urunler/UrunGuncelle?id=@urun.Urun_id">GÜNCELLE</a></td>
+
+            }
+        </tr>
+
+        }
+    </tbody>
+</table>
+
